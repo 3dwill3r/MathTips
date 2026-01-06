@@ -1,0 +1,20 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    min-height: 100vh;
+    color: white;
+}
+
+.login-container {
+    max-width: 400px;
+    margin-top: 80px;
+}
+
+.login-card {
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-weight: 700;
+}

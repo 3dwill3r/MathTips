@@ -1,0 +1,60 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #f4f6f9;
+    min-height: 100vh;
+}
+
+.cadastro-container {
+    max-width: 420px;
+    margin-top: 60px;
+}
+
+.logo {
+    font-weight: 700;
+}
+
+.cadastro-card {
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.6s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fade 0.8s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* DARK MODE */
+body.dark {
+    background: #121212;
+    color: #eaeaea;
+}
+
+body.dark .card {
+    background: #1e1e1e;
+}
+
+body.dark input {
+    background: #2a2a2a;
+    color: #fff;
+    border-color: #444;
+}
