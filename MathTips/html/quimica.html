@@ -1,88 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <!-- Comentário: Head padronizado para index -->
         <meta charset="UTF-8" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>MathTips - Início</title>
+
         <link rel="icon" href="../img/favicon.png" />
         <link rel="stylesheet" href="../css/quimica.css" />
+
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
             rel="stylesheet"
         />
+
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
             rel="stylesheet"
-            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-            crossorigin="anonymous"
         />
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            crossorigin="anonymous"
-        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     </head>
+
     <body>
         <div class="site-wrap">
+            <!-- HEADER -->
             <header class="main-header">
                 <div class="logo">
                     <img src="../img/icon-phys.png" alt="logo" />
-                    <h1>MathTips - Fundamentos da Ciência</h1>
+                    <h1>MathTips</h1>
                 </div>
-                <nav class="main-nav" aria-label="Navegação principal">
-                    <a href="../index.html" class="nav-link">Início</a>
-                    <a href="../html/matematica.html" class="nav-link"
-                        >Matemática</a
-                    >
-                    <a href="../html/fisica.html" class="nav-link">Física</a>
-                    <a href="../html/quimica.html" class="nav-link active"
-                        >Química</a
-                    >
-                    <a href="../html/cadastro.html" class="nav-link"
-                        >Cadastro</a
-                    >
-                    <a href="../html/login.html" class="nav-link">Login</a>
+
+                <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+                <nav class="main-nav" id="mainNav">
+                    <a href="../index.html">Início</a>
+                    <a href="../html/matematica.html">Matemática</a>
+                    <a href="../html/fisica.html">Física</a>
+
+                    <!-- DROPDOWN -->
+                    <div class="dropdown">
+                        <a class="dropbtn">Química ▾</a>
+                        <div class="dropdown-content">
+                            <a href="#">Orgânica</a>
+                            <a href="#">Inorgânica</a>
+                            <a href="#">Físico-Química</a>
+                        </div>
+                    </div>
+
+                    <a href="../html/cadastro.html">Cadastro</a>
+                    <a href="../html/login.html">Login</a>
                 </nav>
             </header>
-            <main>
-                <div class="content">
-                    <article>
-                        <h1>Bem-vindo ao MathTips</h1>
-                        <p class="strong">
-                            Seu apoio rápido em Matemática, Física e Química.
-                        </p>
-                        <p>
-                            Aqui vocé encontra tudo o que precisa para aprender
-                            matemática, física e química. A MathTips tem como
-                            objetivo ajudar estudantes que tenham dificuldades
-                            nas áreas de exatas e procurar entregar sempre o
-                            melhor conteúdo e apoio para os estudos.
-                        </p>
-                        <section>
-                            <h2>Recursos</h2>
-                            <ul class="topicos-lista">
-                                <li>Exercícios rápidos</li>
-                                <li>Explicações curtas</li>
-                                <li>Referências e links</li>
-                            </ul>
-                        </section>
-                    </article>
+
+            <!-- CAROUSEL -->
+            <div
+                id="carouselExample"
+                class="carousel slide mb-4"
+                data-bs-ride="carousel"
+            >
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img
+                            src="../img/slide1.jpg"
+                            class="d-block w-100"
+                            alt="slide"
+                        />
+                    </div>
+                    <div class="carousel-item">
+                        <img
+                            src="../img/slide2.jpg"
+                            class="d-block w-100"
+                            alt="slide"
+                        />
+                    </div>
+                    <div class="carousel-item">
+                        <img
+                            src="../img/slide3.jpg"
+                            class="d-block w-100"
+                            alt="slide"
+                        />
+                    </div>
                 </div>
+            </div>
+
+            <!-- MAIN COM GRID -->
+            <main class="grid-layout">
+                <article>
+                    <h2>Bem-vindo ao MathTips</h2>
+                    <p>Seu apoio rápido em Matemática, Física e Química.</p>
+
+                    <p>
+                        Aqui você encontra conteúdos organizados para facilitar
+                        o aprendizado, com foco em explicações simples e
+                        objetivas.
+                    </p>
+                </article>
+
                 <aside class="side">
                     <h4>Atalhos</h4>
-                    <p class="small">Acesse rapidamente as disciplinas.</p>
-                    <div class="btn-div">Começar</div>
+                    <p>Conteúdos rápidos para estudo.</p>
                 </aside>
             </main>
+
+            <!-- IFRAME -->
+            <section class="iframe-box">
+                <h3>Conteúdo Parceiro</h3>
+                <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Propaganda"
+                    allowfullscreen
+                >
+                </iframe>
+            </section>
+
             <footer>
-                <!-- Comentário: Rodapé padrão para todas as páginas -->
-                <p class="small center">
-                    Nos siga em nossas redes sociais: ©MathTips.
-                </p>
+                <p>© MathTips — Todos os direitos reservados</p>
             </footer>
         </div>
-        <!-- site-wrap -->
+
+        <script>
+            function toggleMenu() {
+                document.getElementById("mainNav").classList.toggle("open");
+                document.body.classList.toggle("menu-open");
+            }
+        </script>
     </body>
 </html>

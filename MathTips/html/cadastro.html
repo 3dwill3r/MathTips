@@ -23,12 +23,14 @@
 
     <body>
         <div class="container cadastro-container fade-in">
-            <header
-                class="d-flex justify-content-between align-items-center mb-4"
-            >
-                <h1 class="logo">📘 MathTips</h1>
+            <header class="main-header">
+                <div class="logo">
+                    <img src="img/favicon.png" alt="logo" />
+                    <h1>MathTips</h1>
+                </div>
 
-                <div class="form-check form-switch">
+                <!-- DARK MODE SWITCH -->
+                <div class="form-check form-switch ms-auto me-3">
                     <input
                         class="form-check-input"
                         type="checkbox"
@@ -36,6 +38,25 @@
                     />
                     <label class="form-check-label">🌙</label>
                 </div>
+
+                <!-- BOTÃO HAMBÚRGUER -->
+                <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+                <!-- NAV -->
+                <nav class="main-nav" id="mainNav">
+                    <a href="index.html" class="active">Início</a>
+                    <a href="html/matematica.html">Matemática</a>
+                    <a href="html/fisica.html">Física</a>
+                    <a href="html/quimica.html">Química</a>
+
+                    <div class="dropdown">
+                        <a class="dropbtn">Conta ▾</a>
+                        <div class="dropdown-content">
+                            <a href="html/cadastro.html">Cadastro</a>
+                            <a href="html/login.html">Login</a>
+                        </div>
+                    </div>
+                </nav>
             </header>
 
             <div class="card cadastro-card">

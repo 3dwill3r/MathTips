@@ -1,151 +1,237 @@
 @font-face {
-  font-family: 'LocalRadical';
-  src: url('../fontes/TheRadicalSign-g09Y.ttf') format('truetype');
+    font-family: "LocalRadical";
+    src: url("../fontes/TheRadicalSign-g09Y.ttf") format("truetype");
 }
 
+/* ================= VARIÁVEIS ================= */
 :root {
-  --primary: #0b5aa6;
-  --accent: #f39c12;
-  --bg: #f4f6fb;
-  --card: #ffffff;
-  --text: #222;
-  --muted: #666;
-  --maxw: 1100px;
+    --primary: #0b5aa6;
+    --accent: #f39c12;
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --text: #222;
+    --muted: #666;
+    --nav-bg: #ffffff;
 }
 
-* { box-sizing: border-box; }
+/* ================= DARK MODE ================= */
+body.dark {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #f1f1f1;
+    --muted: #aaa;
+    --nav-bg: #1b1b1b;
+}
 
+/* ================= RESET ================= */
+* {
+    box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
 body {
-  margin: 0;
-  font-family: 'Montserrat', Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+    margin: 0;
+    font-family: "Montserrat", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    transition: background 0.3s, color 0.3s;
 }
 
+/* ================= SITE ================= */
 .site-wrap {
-  max-width: var(--maxw);
-  width: 95%;
-  margin: 30px auto;
-  background: var(--card);
-  border-radius: 10px;
-  padding: 24px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    max-width: 1100px;
+    width: 95%;
+    margin: 30px auto;
+    background: var(--card);
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: background 0.3s;
 }
 
-header.main-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 20px;
+/* ================= HEADER ================= */
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .logo img {
-  width: 42px;
-  height: 42px;
+    width: 42px;
 }
 
 .logo h1 {
-  font-size: 1.1rem;
-  margin: 0;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  user-select: none;
-  transition: 0.3s;
-}
-
-.menu-toggle:hover {
-  color: var(--primary);
-}
-
-nav.main-nav {
-  display: flex;
-  gap: 10px;
-  transition: all 0.4s ease;
-}
-
-nav.main-nav a {
-  padding: 8px 14px;
-  text-decoration: none;
-  color: var(--primary);
-  border-radius: 6px;
-  transition: 0.3s;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-nav.main-nav a:hover {
-  background: rgba(11, 90, 166, 0.1);
-}
-
-nav.main-nav a.active {
-  background: var(--primary);
-  color: #fff;
-}
-
-/* Animações */
-@keyframes slideIn {
-  from { transform: translateX(-100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-/* Estilo Mobile */
-@media (max-width: 850px) {
-  .menu-toggle { display: block; }
-
-  nav.main-nav {
-    position: fixed;
-    top: 0;
-    left: -250px;
-    width: 230px;
-    height: 100%;
-    flex-direction: column;
-    background: #fff;
-    box-shadow: 4px 0 10px rgba(0,0,0,0.1);
-    padding: 20px;
-    z-index: 999;
-  }
-
-  nav.main-nav.open {
-    left: 0;
-    animation: slideIn 0.4s ease forwards;
-  }
-
-  nav.main-nav a {
-    padding: 12px;
     font-size: 1.1rem;
-  }
-
-  body.menu-open {
-    overflow: hidden;
-  }
+    margin: 0;
 }
 
-main {
-  animation: fadeIn 0.6s ease;
+/* ================= MENU MOBILE ================= */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ================= NAVBAR ================= */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+.main-nav a {
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: var(--primary);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Melhora a visibilidade dos links no modo dark */
+body.dark .main-nav a {
+    color: #4a9eff;
+}
+
+.main-nav a:hover {
+    background: rgba(11, 90, 166, 0.15);
+}
+
+.main-nav a.active {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 110%;
+    background: var(--nav-bg);
+    min-width: 140px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: var(--text);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ================= GRID ================= */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+}
+
+/* ================= CONTENT ================= */
+.content h2 {
+    margin-top: 0;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.topicos-lista {
+    padding-left: 18px;
+}
+
+.topicos-lista li {
+    margin-bottom: 6px;
+}
+
+/* ================= ASIDE ================= */
+.side {
+    background: rgba(11, 90, 166, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+body.dark .side {
+    background: #2a2a2a;
+}
+
+/* ================= FOOTER ================= */
 footer {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid #eee;
-  text-align: center;
-  color: var(--muted);
-  font-size: 0.9rem;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    color: var(--muted);
+}
+
+body.dark footer {
+    border-top-color: #444;
+}
+
+/* ================= DARK MODE BUTTON ================= */
+.dark-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 50%;
+    transition: background 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.dark-toggle:hover {
+    background: rgba(11, 90, 166, 0.15);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 850px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: -240px;
+        height: 100%;
+        width: 220px;
+        flex-direction: column;
+        background: var(--nav-bg);
+        padding: 20px;
+        transition: 0.3s;
+        z-index: 999;
+    }
+
+    .main-nav.open {
+        left: 0;
+    }
+
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
 }

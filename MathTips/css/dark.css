@@ -1,0 +1,16 @@
+body.dark-mode {
+    background: #121212;
+    color: #eaeaea;
+}
+
+body.dark-mode .site-wrap {
+    background: #1e1e1e;
+}
+
+body.dark-mode .main-nav a {
+    color: #90caf9;
+}
+
+body.dark-mode .side {
+    background: #2a2a2a;
+}
